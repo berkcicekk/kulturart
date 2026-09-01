@@ -190,9 +190,11 @@ if (heroVideo) {
   heroVideo.loop = true;
   heroVideo.playsInline = true;
 
-  heroVideo.addEventListener("error", () => {
-    heroVideo.closest(".hero__media").classList.add("video-unavailable");
-  });
+  const heroMedia = heroVideo.closest(".hero__media");
+  const showVideoFallback = () => heroMedia?.classList.add("video-unavailable");
+
+  heroVideo.addEventListener("error", showVideoFallback);
+  heroVideo.querySelector("source")?.addEventListener("error", showVideoFallback);
 
   const playAttempt = heroVideo.play();
   if (playAttempt) {

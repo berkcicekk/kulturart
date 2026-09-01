@@ -778,7 +778,8 @@ body[data-menu-theme="lime"] .site-menu:not([open]) summary {
   margin: 0;
   place-items: center;
   background:
-    linear-gradient(135deg, rgb(59 154 196 / 92%), rgb(17 29 34 / 94%));
+    linear-gradient(135deg, rgb(17 29 34 / 42%), rgb(17 29 34 / 74%)),
+    url("/assets/brand/isff-promo.jpg") center / cover;
   color: var(--white);
   font-size: 0.75rem;
   font-weight: 700;
