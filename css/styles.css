@@ -135,96 +135,6 @@ h3 {
   transform: translateY(0);
 }
 
-/* Quiet festival notice: fixed independently from all measured scroll scenes */
-.festival-note {
-  position: fixed;
-  z-index: 45;
-  right: var(--gutter);
-  bottom: clamp(1rem, 2vw, 2rem);
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  width: min(58rem, calc(100vw - (2 * var(--gutter))));
-  border-top: 1px solid var(--ink);
-  background: var(--lime);
-  color: var(--ink);
-  box-shadow: 0 1.2rem 3.5rem rgb(0 0 0 / 24%);
-}
-
-.festival-note[hidden] {
-  display: none;
-}
-
-.festival-note__date {
-  display: grid;
-  align-content: center;
-  padding: 1.25rem clamp(1rem, 2vw, 2rem);
-  border-right: 1px solid var(--ink);
-  text-align: center;
-}
-
-.festival-note__date span {
-  font-family: var(--display);
-  font-size: clamp(2rem, 3.2vw, 3.6rem);
-  letter-spacing: -0.06em;
-  line-height: 0.85;
-}
-
-.festival-note__date small,
-.festival-note__locations {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.festival-note__copy {
-  padding: 1.1rem clamp(1rem, 2vw, 2rem);
-}
-
-.festival-note__copy .eyebrow {
-  margin-bottom: 0.35rem;
-}
-
-.festival-note__copy h2 {
-  margin-bottom: 0.3rem;
-  font-size: clamp(1.45rem, 2.1vw, 2.4rem);
-}
-
-.festival-note__copy > p:not(.eyebrow, .festival-note__locations) {
-  max-width: 64ch;
-  margin-bottom: 0.45rem;
-  font-size: 0.82rem;
-}
-
-.festival-note__locations {
-  margin: 0;
-}
-
-.festival-note__link {
-  display: grid;
-  min-width: 9.5rem;
-  padding: 1.25rem 2.5rem 1.25rem 1.25rem;
-  border-left: 1px solid var(--ink);
-  place-items: center;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.festival-note__close {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.35rem;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
 /* Editorial internal pages */
 .subpage {
   background: var(--paper);
@@ -1486,31 +1396,6 @@ body[data-menu-theme="lime"] .site-menu:not([open]) summary {
 }
 
 @media (max-width: 47.99rem) {
-  .festival-note {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    grid-template-columns: 1fr auto;
-    width: calc(100vw - 1.5rem);
-  }
-
-  .festival-note__date {
-    display: none;
-  }
-
-  .festival-note__copy {
-    padding: 1rem;
-  }
-
-  .festival-note__copy > p:not(.eyebrow, .festival-note__locations),
-  .festival-note__locations {
-    display: none;
-  }
-
-  .festival-note__link {
-    min-width: 6.5rem;
-    padding-inline: 0.75rem;
-  }
-
   .page-hero {
     height: 145svh;
   }
@@ -2040,9 +1925,6 @@ body[data-menu-theme="lime"] .site-menu:not([open]) summary {
     gap: 2.5rem;
   }
 
-  .festival-note {
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
-  }
 }
 
 /* Shared social links */

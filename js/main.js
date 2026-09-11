@@ -212,33 +212,6 @@ if (newsletterForm) {
   });
 }
 
-const festivalNote = document.querySelector("[data-festival-note]");
-const festivalDismiss = document.querySelector("[data-festival-dismiss]");
-
-if (festivalNote && festivalDismiss) {
-  let wasDismissed = false;
-
-  try {
-    wasDismissed = window.sessionStorage.getItem("festival-note-dismissed") === "true";
-  } catch (error) {
-    wasDismissed = false;
-  }
-
-  if (wasDismissed) {
-    festivalNote.hidden = true;
-  }
-
-  festivalDismiss.addEventListener("click", () => {
-    festivalNote.hidden = true;
-
-    try {
-      window.sessionStorage.setItem("festival-note-dismissed", "true");
-    } catch (error) {
-      /* Dismissal still works when storage is unavailable. */
-    }
-  });
-}
-
 const socialProfiles = [
   ["YouTube", "https://www.youtube.com/@ISFFDetmold"],
   ["Instagram", "https://www.instagram.com/kulturundart/"],
