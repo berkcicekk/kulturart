@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="W.E.B. in Tech · Women Engagement Boost in Technology. A free video course to grow digital skills, open new doors and explore opportunities in Europe's social economy.">
+    <title>W.E.B. in Tech — Kultur &amp; Art</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      /* ── W.E.B. in Tech page-specific styles ── */
+
+      /* Hero override – dark background */
+      .web-hero {
+        padding-block: clamp(10rem, 18vw, 16rem) clamp(3rem, 6vw, 6rem);
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .web-hero__back {
+        display: inline-block;
+        margin-bottom: 3rem;
+        color: var(--lime);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .web-hero__eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* EU logo badge in hero */
+      .eu-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.45rem 0.9rem 0.45rem 0.45rem;
+        background: #fff;
+        border-radius: 2px;
+        color: #003399;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        text-transform: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .eu-badge__flag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 1.6rem;
+        background: #003399;
+        border-radius: 1px;
+        flex-shrink: 0;
+      }
+
+      /* EU stars drawn with CSS */
+      .eu-badge__stars {
+        position: relative;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .eu-badge__stars::before {
+        content: "★ ★ ★\A★       ★\A★       ★\A★       ★\A★ ★ ★";
+        display: block;
+        white-space: pre;
+        color: #FFCC00;
+        font-size: 0.22rem;
+        line-height: 1.6;
+        letter-spacing: 0.1rem;
+        text-align: center;
+      }
+
+      /* Cleaner EU flag using SVG inline */
+      .eu-flag-svg {
+        width: 2.6rem;
+        height: 1.75rem;
+        flex-shrink: 0;
+        border-radius: 1px;
+      }
+
+      .eu-badge__text {
+        line-height: 1.25;
+      }
+
+      .web-hero h1 {
+        margin-block: 1.5rem 2rem;
+        font-size: clamp(4.5rem, 14vw, 13rem);
+        line-height: 0.85;
+        text-transform: uppercase;
+        color: var(--lime);
+      }
+
+      .web-hero h1 span {
+        color: var(--white);
+        display: block;
+      }
+
+      .web-hero__subtitle {
+        font-size: clamp(1.35rem, 2.5vw, 2.2rem);
+        font-weight: 400;
+        margin: 0 0 0.5rem;
+        line-height: 1.2;
+        max-width: 18ch;
+      }
+
+      .web-hero__tagline {
+        font-size: clamp(1rem, 1.6vw, 1.5rem);
+        color: rgba(255,255,255,0.7);
+        max-width: 38ch;
+        margin: 0 0 2.5rem;
+      }
+
+      .web-hero__details {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .web-hero__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 1.8rem;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background var(--fast) var(--ease);
+      }
+
+      .web-hero__cta:hover {
+        background: #b8e95e;
+      }
+
+      /* Pill badges row */
+      .web-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 2.5rem;
+      }
+
+      .web-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.9rem;
+        border: 1px solid rgba(255,255,255,0.3);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .web-pill--lime {
+        background: var(--lime);
+        border-color: var(--lime);
+        color: var(--ink);
+      }
+
+      /* ── About section ── */
+      .web-about {
+        padding-block: var(--section-space);
+        background: var(--paper);
+      }
+
+      .web-about__grid {
+        display: grid;
+        grid-template-columns: minmax(9rem, 0.35fr) 1fr;
+        gap: clamp(3rem, 8vw, 10rem);
+        align-items: start;
+      }
+
+      .web-about__label {
+        padding-top: 0.6rem;
+      }
+
+      .web-about__label .eyebrow {
+        color: var(--blue-dark);
+      }
+
+      .web-about__body h2 {
+        font-size: clamp(3rem, 6vw, 6.5rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .web-about__body .lead {
+        font-size: clamp(1.25rem, 2vw, 1.9rem);
+        line-height: 1.35;
+        margin-bottom: 2rem;
+        max-width: 52ch;
+      }
+
+      .web-about__body p {
+        max-width: 58ch;
+        font-size: clamp(1rem, 1.2vw, 1.25rem);
+        line-height: 1.55;
+      }
+
+      /* ── Modules section ── */
+      .web-modules {
+        padding-block: var(--section-space);
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .web-modules__header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 2rem;
+        margin-bottom: clamp(3rem, 6vw, 7rem);
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .web-modules__header h2 {
+        font-size: clamp(3.5rem, 8vw, 9rem);
+        margin: 0;
+        color: var(--lime);
+      }
+
+      .web-modules__count {
+        font-size: clamp(1rem, 2vw, 1.6rem);
+        opacity: 0.6;
+        text-align: right;
+        line-height: 1.3;
+      }
+
+      .web-modules__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        background: rgba(255,255,255,0.1);
+      }
+
+      .module-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: clamp(1.5rem, 3vw, 3rem);
+        background: var(--ink);
+        transition: background var(--fast) var(--ease);
+      }
+
+      .module-card:hover {
+        background: #0e1b20;
+      }
+
+      .module-card__num {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--lime);
+        text-transform: uppercase;
+      }
+
+      .module-card__title {
+        font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+        font-family: var(--display);
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .module-card__desc {
+        font-size: 0.9rem;
+        opacity: 0.65;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* ── Videos section ── */
+      .web-videos {
+        padding-block: var(--section-space);
+        background: var(--paper);
+      }
+
+      .web-videos__header {
+        margin-bottom: clamp(3rem, 6vw, 6rem);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 2rem;
+      }
+
+      .web-videos__header h2 {
+        font-size: clamp(3.5rem, 8vw, 9rem);
+        margin: 0 0 0.5rem;
+      }
+
+      .web-videos__header p {
+        font-size: clamp(1rem, 1.5vw, 1.4rem);
+        opacity: 0.65;
+        margin: 0;
+        max-width: 42ch;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--gap);
+      }
+
+      .video-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .video-item__embed {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: var(--ink);
+        overflow: hidden;
+      }
+
+      .video-item__embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-item__label {
+        padding: 0.75rem 0.9rem;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* Featured first video */
+      .video-item--featured {
+        grid-column: 1 / -1;
+      }
+
+      .video-item--featured .video-item__embed {
+        aspect-ratio: 16 / 7;
+      }
+
+      /* ── Funding / EU section ── */
+      .web-funding {
+        padding-block: clamp(4rem, 8vw, 9rem);
+        background: #003399;
+        color: var(--white);
+      }
+
+      .web-funding__inner {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(3rem, 7vw, 8rem);
+        align-items: center;
+      }
+
+      .web-funding__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        flex-shrink: 0;
+      }
+
+      /* Drawn EU flag – large version */
+      .eu-flag-large {
+        display: block;
+        width: clamp(7rem, 12vw, 11rem);
+        height: auto;
+      }
+
+      .web-funding__logo span {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-align: center;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: #FFCC00;
+      }
+
+      .web-funding__text h2 {
+        font-size: clamp(2rem, 4vw, 4.5rem);
+        margin-bottom: 1rem;
+        color: #FFCC00;
+      }
+
+      .web-funding__text p {
+        max-width: 52ch;
+        font-size: clamp(1rem, 1.4vw, 1.3rem);
+        opacity: 0.85;
+        margin-bottom: 0.5rem;
+        line-height: 1.55;
+      }
+
+      .web-funding__text p.small {
+        font-size: 0.8rem;
+        opacity: 0.55;
+        margin-top: 1.5rem;
+      }
+
+      /* ── CTA ── */
+      .web-cta {
+        padding-block: var(--section-space);
+        background: var(--lime);
+      }
+
+      .web-cta h2 {
+        font-size: clamp(4rem, 9vw, 10rem);
+        max-width: 13ch;
+        margin-bottom: 2rem;
+      }
+
+      .web-cta .section-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem 1.8rem;
+        border: 2px solid var(--ink);
+        transition: background var(--fast), color var(--fast);
+      }
+
+      .web-cta .section-link:hover {
+        background: var(--ink);
+        color: var(--lime);
+      }
+
+      /* Responsive */
+      @media (max-width: 63.99rem) {
+        .web-modules__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .video-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .video-item--featured {
+          grid-column: 1 / -1;
+        }
+
+        .web-funding__inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .web-funding__logo {
+          align-items: center;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 47.99rem) {
+        .web-about__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .web-modules__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .web-modules__header {
+          grid-template-columns: 1fr;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .video-item--featured .video-item__embed {
+          aspect-ratio: 16 / 9;
+        }
+      }
+    </style>
+  </head>
+  <body class="subpage subpage--dark-hero">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <nav class="site-header__primary" aria-label="Primary navigation">
+        <a class="header-link" href="../about/">About us</a>
+        <a class="header-link" href="../projects/">Projects</a>
+        <a class="header-status" href="../about/#locations"><span>Detmold · Antalya</span><span aria-hidden="true">→</span></a>
+      </nav>
+      <a class="site-logo" href="../" aria-label="Kultur &amp; Art home">
+        <img src="../assets/brand/kulturart-logo.png" alt="Kultur &amp; Art" width="512" height="313">
+      </a>
+      <div class="site-header__tools">
+        <a class="header-link header-link--featured" href="../isff-detmold/">ISFF Detmold</a>
+        <details class="site-menu">
+          <summary><span class="site-menu__label">Menu</span><span class="site-menu__icon" aria-hidden="true"></span></summary>
+          <div class="site-menu__overlay">
+            <div class="site-menu__heading">Explore</div>
+            <nav class="site-menu__main" aria-label="Menu navigation">
+              <a href="../"><span>01</span> Home</a>
+              <a href="../about/"><span>02</span> About us</a>
+              <a href="../projects/"><span>03</span> Projects</a>
+              <a href="../isff-detmold/"><span>04</span> ISFF Detmold</a>
+              <a href="../pif/"><span>05</span> Erasmus+ PIF</a>
+              <a href="../web-in-tech/" aria-current="page"><span>06</span> W.E.B. in Tech</a>
+            </nav>
+            <div class="site-menu__meta">
+              <div><p class="eyebrow">Based in</p><p>Detmold, Germany<br>Antalya, Türkiye</p></div>
+              <div><p class="eyebrow">Contact</p><a href="mailto:info@kultur-art.com">info@kultur-art.com</a></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ── Hero ── -->
+      <section class="web-hero" data-menu-theme="dark" aria-labelledby="page-title">
+        <div class="container">
+          <a class="web-hero__back" href="../projects/">← All projects</a>
+
+          <div class="web-hero__eyebrow">
+            <!-- EU Co-funded badge (SVG inline flag) -->
+            <div class="eu-badge" role="img" aria-label="Co-funded by the European Union">
+              <svg class="eu-flag-svg" viewBox="0 0 45 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect width="45" height="30" fill="#003399"/>
+                <!-- 12 stars arranged in a circle, centre 22.5,15, radius 8 -->
+                <g fill="#FFCC00" transform="translate(22.5,15)">
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(0) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(30) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(60) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(90) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(120) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(150) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(180) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(210) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(240) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(270) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(300) translate(0,-8)"/>
+                  <polygon points="0,-1.6 0.4,-0.5 1.5,-0.5 0.6,0.2 0.9,1.4 0,0.7 -0.9,1.4 -0.6,0.2 -1.5,-0.5 -0.4,-0.5" transform="rotate(330) translate(0,-8)"/>
+                </g>
+              </svg>
+              <span class="eu-badge__text">Co-funded by<br>the European Union</span>
+            </div>
+            <span class="eyebrow" style="color:rgba(255,255,255,0.5)">Free Video Course · Kultur &amp; Art</span>
+          </div>
+
+          <h1 id="page-title">W.E.B.<br><span>in Tech</span></h1>
+
+          <p class="web-hero__subtitle">Grow your skills.<br>Open new doors.</p>
+          <p class="web-hero__tagline">Are you ready to unlock your potential, grow your digital skills and explore new opportunities in Europe's social economy? You're in the right place.</p>
+
+          <div class="web-pills" aria-label="Course highlights">
+            <span class="web-pill web-pill--lime">10 Modules</span>
+            <span class="web-pill">Free Video Course</span>
+            <span class="web-pill">DigComp</span>
+            <span class="web-pill">Career Skills</span>
+            <span class="web-pill">Social Economy</span>
+          </div>
+
+          <div class="web-hero__details" style="margin-top:3rem">
+            <a class="web-hero__cta" href="#course-videos">Start Learning ↓</a>
+            <a class="section-link" style="color:rgba(255,255,255,0.6)" href="#about-project">About the project <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── About ── -->
+      <section class="web-about" id="about-project" data-menu-theme="paper" aria-labelledby="about-title">
+        <div class="container web-about__grid">
+          <div class="web-about__label">
+            <p class="eyebrow">About the project</p>
+          </div>
+          <div class="web-about__body" data-reveal>
+            <h2 id="about-title">Women Engagement Boost in Technology</h2>
+            <p class="lead">Designed especially for young women and mothers with migrant backgrounds who want to strengthen their skills, confidence and professional opportunities.</p>
+            <p>By the end of the journey, you won't just have new knowledge. You'll have a roadmap to turn training into employment, confidence into leadership and ideas into action.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Modules ── -->
+      <section class="web-modules" data-menu-theme="dark" aria-labelledby="modules-title">
+        <div class="container">
+          <div class="web-modules__header">
+            <h2 id="modules-title">10<br>Modules</h2>
+            <p class="web-modules__count">Free<br>Video Course</p>
+          </div>
+          <div class="web-modules__grid">
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">01 · Digital</span>
+              <h3 class="module-card__title">Digital Skills</h3>
+              <p class="module-card__desc">Digital skills aligned with DigComp</p>
+            </article>
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">02 · Tools</span>
+              <h3 class="module-card__title">Digital Tools</h3>
+              <p class="module-card__desc">Digital tools for NGOs &amp; social enterprises</p>
+            </article>
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">03 · Communication</span>
+              <h3 class="module-card__title">Communication</h3>
+              <p class="module-card__desc">Storytelling &amp; social media for impact</p>
+            </article>
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">04 · Employability</span>
+              <h3 class="module-card__title">Employability</h3>
+              <p class="module-card__desc">CV, Europass &amp; LinkedIn</p>
+            </article>
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">05 · Connection</span>
+              <h3 class="module-card__title">Connection</h3>
+              <p class="module-card__desc">Public speaking &amp; networking</p>
+            </article>
+
+            <article class="module-card" data-reveal>
+              <span class="module-card__num">06 · Future</span>
+              <h3 class="module-card__title">Future</h3>
+              <p class="module-card__desc">Social entrepreneurship &amp; career pathways</p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Videos ── -->
+      <section class="web-videos" id="course-videos" data-menu-theme="paper" aria-labelledby="videos-title">
+        <div class="container">
+          <div class="web-videos__header" data-reveal>
+            <p class="eyebrow">Free Video Course</p>
+            <h2 id="videos-title">Course Videos</h2>
+            <p>Watch all modules and start your learning journey today.</p>
+          </div>
+
+          <div class="video-grid">
+
+            <!-- Featured / Module 1 -->
+            <div class="video-item video-item--featured">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/-gHR8VgrzY8"
+                  title="W.E.B. in Tech – Module 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">01 · Introduction</p>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/deYYdOMTRZA"
+                  title="W.E.B. in Tech – Module 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">02 · Digital Skills</p>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/_TJW84DPy6w"
+                  title="W.E.B. in Tech – Module 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">03 · Digital Tools</p>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/xVEEX9JnSWQ"
+                  title="W.E.B. in Tech – Module 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">04 · Communication</p>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/fZlf0KGfeEE"
+                  title="W.E.B. in Tech – Module 5"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">05 · Employability</p>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/HDgXpTAqD3I"
+                  title="W.E.B. in Tech – Module 6"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">06 · Connection</p>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/WNdKxKcEUMg"
+                  title="W.E.B. in Tech – Module 7"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">07 · Future</p>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/dIiD0GCptGw"
+                  title="W.E.B. in Tech – Module 8"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">08 · Entrepreneurship</p>
+            </div>
+
+            <!-- Module 9 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/NDxL1z-28ro"
+                  title="W.E.B. in Tech – Module 9"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">09 · Career Pathways</p>
+            </div>
+
+            <!-- Module 10 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/pnZun_pqaLA"
+                  title="W.E.B. in Tech – Module 10"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">10 · Wrap-up</p>
+            </div>
+
+            <!-- Bonus 1 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/W1nOWh3noQs"
+                  title="W.E.B. in Tech – Bonus Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">Bonus · Extra Resource</p>
+            </div>
+
+            <!-- Bonus 2 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/J4oZFIqvK84"
+                  title="W.E.B. in Tech – Bonus Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">Bonus · Extra Resource</p>
+            </div>
+
+            <!-- Bonus 3 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/aXLPf_NTLlU"
+                  title="W.E.B. in Tech – Bonus Video 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">Bonus · Extra Resource</p>
+            </div>
+
+            <!-- Bonus 4 -->
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/Smyn9tcbpLY"
+                  title="W.E.B. in Tech – Bonus Video 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-item__label">Bonus · Extra Resource</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EU Funding ── -->
+      <section class="web-funding" data-menu-theme="dark" aria-label="Project funding information">
+        <div class="container web-funding__inner">
+
+          <!-- Large EU flag drawn with SVG -->
+          <div class="web-funding__logo">
+            <svg class="eu-flag-large" viewBox="0 0 90 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="European Union flag">
+              <title>European Union flag</title>
+              <rect width="90" height="60" fill="#003399"/>
+              <g fill="#FFCC00" transform="translate(45,30)">
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(0) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(30) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(60) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(90) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(120) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(150) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(180) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(210) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(240) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(270) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(300) translate(0,-16)"/>
+                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(330) translate(0,-16)"/>
+              </g>
+            </svg>
+            <span>Co-funded by<br>the European Union</span>
+          </div>
+
+          <div class="web-funding__text" data-reveal>
+            <h2>European Social Fund</h2>
+            <p>W.E.B. in Tech is co-funded by the European Social Fund Agency under project <strong>ESF-SI-2023-SKILLS-01-0011</strong>. The course supports women's digital inclusion and career development within Europe's social economy.</p>
+            <p class="small">W.E.B. in Tech – Women Engagement Boost in Technology · Project ESF-SI-2023-SKILLS-01-0011 · European Social Fund Agency</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CTA ── -->
+      <section class="web-cta" data-menu-theme="lime" aria-labelledby="cta-title">
+        <div class="container">
+          <p class="eyebrow">W.E.B. in Tech</p>
+          <h2 id="cta-title">Let's talk<br>about the project.</h2>
+          <a class="section-link" href="mailto:info@kultur-art.com?subject=W.E.B.%20in%20Tech">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+      <div class="site-footer__statement container">
+        <p>Have a project idea or partnership in mind?</p>
+        <a href="mailto:info@kultur-art.com">Talk with us <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="site-footer__links container">
+        <div>
+          <p class="eyebrow">Explore</p>
+          <a href="../about/">About us</a>
+          <a href="../projects/">Projects</a>
+          <a href="../isff-detmold/">ISFF Detmold</a>
+          <a href="../pif/">Erasmus+ PIF</a>
+          <a href="../web-in-tech/" aria-current="page">W.E.B. in Tech</a>
+        </div>
+        <div>
+          <p class="eyebrow">Places</p>
+          <a href="../about/#locations">Hangar 21 · Detmold</a>
+          <a href="../about/#locations">Antalya</a>
+        </div>
+        <div>
+          <p class="eyebrow">Contact</p>
+          <a href="mailto:info@kultur-art.com">info@kultur-art.com</a>
+          <a href="tel:+4952314581212">+49 5231 458 12 12</a>
+        </div>
+        <div class="site-footer__brand">
+          <img src="../assets/brand/kulturart-logo.png" alt="Kultur &amp; Art" width="512" height="313">
+        </div>
+      </div>
+      <div class="site-footer__legal container">
+        <p>© Kultur &amp; Art Initiative e.V.</p>
+        <a href="#main-content">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
