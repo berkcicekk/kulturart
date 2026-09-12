@@ -362,20 +362,33 @@ h3 {
   background: var(--ink);
   color: var(--white);
   box-shadow: 0 1px 0 rgb(255 255 255 / 14%);
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
   transition:
     background-color 280ms ease,
-    box-shadow 280ms ease,
-    backdrop-filter 280ms ease;
+    box-shadow 280ms ease;
   pointer-events: none;
 }
 
 body.nav-is-scrolled .site-header {
-  background: rgb(17 29 34 / 68%);
+  background: rgb(17 29 34 / 10%);
   box-shadow: 0 1px 0 rgb(255 255 255 / 18%);
+}
+
+body::before {
+  position: fixed;
+  z-index: 29;
+  inset: 0 0 auto;
+  height: clamp(5.75rem, 8vw, 8.25rem);
+  pointer-events: none;
+  content: "";
+  opacity: 0;
+  background: rgb(17 29 34 / 68%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  transition: opacity 280ms ease;
+}
+
+body.nav-is-scrolled::before {
+  opacity: 1;
 }
 
 .subpage .site-header,
