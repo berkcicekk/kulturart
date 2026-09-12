@@ -94,6 +94,7 @@ const updateHeroScene = (progress) => {
 
 const updateScroll = () => {
   animationFrame = 0;
+  document.body.classList.toggle("nav-is-scrolled", window.scrollY > 24);
 
   if (reduceMotionQuery.matches) {
     document.body.classList.toggle(

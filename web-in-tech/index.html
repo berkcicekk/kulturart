@@ -35,6 +35,12 @@
         margin-bottom: 1.5rem;
       }
 
+      .web-hero__funding-logo {
+        display: block;
+        width: clamp(11rem, 18vw, 15rem);
+        height: auto;
+      }
+
       /* EU logo badge in hero */
       .eu-badge {
         display: inline-flex;
@@ -383,21 +389,10 @@
         flex-shrink: 0;
       }
 
-      /* Drawn EU flag – large version */
-      .eu-flag-large {
+      .web-funding__logo-image {
         display: block;
-        width: clamp(7rem, 12vw, 11rem);
+        width: clamp(13rem, 25vw, 24rem);
         height: auto;
-      }
-
-      .web-funding__logo span {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-align: center;
-        line-height: 1.4;
-        text-transform: uppercase;
-        color: #FFCC00;
       }
 
       .web-funding__text h2 {
@@ -507,6 +502,7 @@
       <nav class="site-header__primary" aria-label="Primary navigation">
         <a class="header-link" href="../about/">About us</a>
         <a class="header-link" href="../projects/">Projects</a>
+        <a class="header-link" href="../assets/brand/KUA%20PIF%202026-2.pdf" target="_blank" rel="noopener">PIF 2026 (PDF)</a>
         <a class="header-status" href="../about/#locations"><span>Detmold · Antalya</span><span aria-hidden="true">→</span></a>
       </nav>
       <a class="site-logo" href="../" aria-label="Kultur &amp; Art home">
@@ -523,12 +519,12 @@
               <a href="../about/"><span>02</span> About us</a>
               <a href="../projects/"><span>03</span> Projects</a>
               <a href="../isff-detmold/"><span>04</span> ISFF Detmold</a>
-              <a href="../pif/"><span>05</span> Erasmus+ PIF</a>
+              <a href="../assets/brand/KUA%20PIF%202026-2.pdf" target="_blank" rel="noopener"><span>05</span> Erasmus+ PIF (PDF)</a>
               <a href="../web-in-tech/" aria-current="page"><span>06</span> W.E.B. in Tech</a>
             </nav>
             <div class="site-menu__meta">
               <div><p class="eyebrow">Based in</p><p>Detmold, Germany<br>Antalya, Türkiye</p></div>
-              <div><p class="eyebrow">Contact</p><a href="mailto:info@kultur-art.com">info@kultur-art.com</a></div>
+              <div><p class="eyebrow">Contact</p><a href="mailto:info@kultur-art.com">info@kultur-art.com</a><a href="../assets/brand/KUA%20PIF%202026-2.pdf" target="_blank" rel="noopener">Partner information (PDF)</a></div>
             </div>
           </div>
         </details>
@@ -543,8 +539,8 @@
           <a class="web-hero__back" href="../projects/">← All projects</a>
 
           <div class="web-hero__eyebrow">
-            <!-- EU Co-funded badge (SVG inline flag) -->
-            <div class="eu-badge" role="img" aria-label="Co-funded by the European Union">
+            <img class="web-hero__funding-logo" src="../assets/brand/wwwsoc%C4%B1alproject.jpg" alt="Co-funded by the European Union and Social Innovation Initiative" width="419" height="182">
+            <div class="eu-badge visually-hidden" aria-hidden="true">
               <svg class="eu-flag-svg" viewBox="0 0 45 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <rect width="45" height="30" fill="#003399"/>
                 <!-- 12 stars arranged in a circle, centre 22.5,15, radius 8 -->
@@ -852,27 +848,8 @@
       <section class="web-funding" data-menu-theme="dark" aria-label="Project funding information">
         <div class="container web-funding__inner">
 
-          <!-- Large EU flag drawn with SVG -->
           <div class="web-funding__logo">
-            <svg class="eu-flag-large" viewBox="0 0 90 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="European Union flag">
-              <title>European Union flag</title>
-              <rect width="90" height="60" fill="#003399"/>
-              <g fill="#FFCC00" transform="translate(45,30)">
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(0) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(30) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(60) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(90) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(120) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(150) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(180) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(210) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(240) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(270) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(300) translate(0,-16)"/>
-                <polygon points="0,-3.2 0.8,-1 3,-1 1.2,0.4 1.8,2.8 0,1.4 -1.8,2.8 -1.2,0.4 -3,-1 -0.8,-1" transform="rotate(330) translate(0,-16)"/>
-              </g>
-            </svg>
-            <span>Co-funded by<br>the European Union</span>
+            <img class="web-funding__logo-image" src="../assets/brand/wwwsoc%C4%B1alproject.jpg" alt="Co-funded by the European Union and Social Innovation Initiative" width="419" height="182">
           </div>
 
           <div class="web-funding__text" data-reveal>
